@@ -11,7 +11,7 @@ show_excerpts: true # set to true to show excerpts on the homepage
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 sass:
   sass_dir: _sass
-plainwhite:
+plain:
   name: Adam Denisov
   tagline: Developer. Designer
   date_format: "%b %-d, %Y"
@@ -53,7 +53,7 @@ plainwhite:
 # - about.md
 
 # Build settings
-theme: plainwhite
+theme: plain
 
 plugins:
   - jekyll-seo-tag
