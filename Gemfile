@@ -14,3 +14,5 @@ group :jekyll_plugins do
   gem "jekyll-titles-from-headings"
   gem "jekyll-relative-links"
 end
+
+gem "webrick", "~> 1.8"
