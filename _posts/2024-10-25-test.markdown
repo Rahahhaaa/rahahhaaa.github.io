@@ -1,11 +1,18 @@
 ---
 layout: post
-title: test
+title: \[CV 논문 리뷰\] ImageNet Classification with Deep Convolutional Neural Networks 
 date: 2024-10-25 00:00:00 +0800
 description: test page. # Add post description (optional)
 img: rahahhaaa.jpg # Add image post (optional)
-tags: [test, tag_test] # add tag
+tags: [diary] # add tag
 ---
 
-### 집 가고 싶다
-언제 전여갛냐
+### [1] Abstract
+
+### [2] Introduction
+
+### [3] Down-Sampling
+
+### [4] Architecture
+
+
