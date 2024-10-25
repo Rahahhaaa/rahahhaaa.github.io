@@ -3,7 +3,7 @@ layout: post
 title: "[CV 논문 리뷰] ImageNet Classification with Deep Convolutional Neural Networks"
 date: 2024-10-25 00:00:00 +0800
 description: CV 논문 리뷰 ImageNet Classification with Deep  # Add post description (optional)
-img: ImageNet Classification with Deep Convolutional Neural Networks/architecture.jpg # Add image post (optional)
+img: ICWDC/architecture.jpg # Add image post (optional)
 tags: [CV] # add tag
 ---
 
@@ -20,7 +20,7 @@ tags: [CV] # add tag
 ### [3] Architecture
 ##### 3.1 ReLU Nonlinearity
 기존의 뉴런의 출력 f를 모델링 하는 방식은 tahn(x)나 sigmoid(x)였음. 그런데 이러한 saturating-linearity들은 non-saturating nonlinearity(ReLU...) 보다 훈련시간(gradient descent)이 훨씬 오래 걸린다.
-![](ImageNet Classification with Deep Convolutional Neural Networks/relu.png)
+![](ICWDC/relu.png)
 ReLU를 적용한 Deep convolutional nueral networks는 tanh를 적용한 것보다 훨씬 빨랐다. 위 그래프는 CIFAR-10데이터셋에 대한 훈련 에러를 25%까지 도달시키는데 6배 더 빨랐음을 보여준다.
 
 ##### 3.2 GPU
