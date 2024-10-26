@@ -44,7 +44,13 @@ ReLU는 양수의 입력만을 그대로 사용한다. 그렇게 되면 매우 �
 CNN에서 pooling을 사용하는 이유는 특성맵의 크기를 줄이기 위해서이다. ImageNet에서는 stride의 크기를 커널의 크기보다 작게 설정해 overlapping pooling을 적용하였다. 이렇게 해서 top-1과 top-5 에러를 줄였다고 한다.
 
 ##### 3.5 Overall Architecture
+<p align = "center">
+    <img src="/assets/img/ICWDC/arch.png" style = "width:400px; heigth:auto">
+</p>
+위에 나타나는 것처럼 네트워크는 가중치를 가지는 총 8개의 레이어로 구성되어있고 첫 5개는 conv layer 나머지 3개는 fc layer이다.마지막 fc layer의 출력은 1000-way softmax로 공급돼 1000개의 클래스 레이블에 대한 분포를 생성한다. 두번째 네번째 다섯번째 convolutional layer들은 동일한 GPU에 있는 이전 레이어의 커널 맵과만 연결되어있고 세번째 레이어만 두번째 레이어의 모든 커널맵과 연결되어있다. fc 레이어의 모든 뉴런들은 이전 레이어의 모든 뉴런과 연결되어있다. LRN은 첫번째 두번째 convolutional layer에만 따라온다. Max-pooling layer는 두 개의 response-normalization layer과 다섯번째 convolutional layer에 따라온다. ReLU non-linearity는 모든 convolutional layer와 fc layer에 적용된다.
 
+###### Convolutional Layers
+* 첫번째 레이어는 
 
 
 
