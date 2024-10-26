@@ -21,7 +21,7 @@ tags: [CV] # add tag
 ##### 3.1 ReLU Nonlinearity
 
 <p align = "center">
-    <img src="/assets/img/ICWDC/relu.png" style = "width:200px; heigth:auto">
+    <img src="/assets/img/ICWDC/relu.png" style = "width:400px; heigth:auto">
 </p>
 
 기존의 뉴런의 출력 f를 모델링 하는 방식은 tahn(x)나 sigmoid(x)였음. 그런데 이러한 saturating-linearity들은 non-saturating nonlinearity(ReLU...) 보다 훈련시간(gradient descent)이 훨씬 오래 걸린다. ReLU를 적용한 Deep convolutional nueral networks는 tanh를 적용한 것보다 훨씬 빨랐다. 위 그래프는 CIFAR-10데이터셋에 대한 훈련 에러를 25%까지 도달시키는데 6배 더 빨랐음을 보여준다.
