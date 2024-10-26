@@ -19,13 +19,12 @@ tags: [CV] # add tag
 
 ### [3] Architecture
 ##### 3.1 ReLU Nonlinearity
-기존의 뉴런의 출력 f를 모델링 하는 방식은 tahn(x)나 sigmoid(x)였음. 그런데 이러한 saturating-linearity들은 non-saturating nonlinearity(ReLU...) 보다 훈련시간(gradient descent)이 훨씬 오래 걸린다.
 
-<img src="/assets/img/ICWDC/relu.png">
-<img src="/img/ICWDC/relu.png">
-<img src="/ICWDC/relu.png">
+<p align = "center">
+    <img src="/assets/img/ICWDC/relu.png" style = "width:200px; heigth:auto">
+</p>
 
-ReLU를 적용한 Deep convolutional nueral networks는 tanh를 적용한 것보다 훨씬 빨랐다. 위 그래프는 CIFAR-10데이터셋에 대한 훈련 에러를 25%까지 도달시키는데 6배 더 빨랐음을 보여준다.
+기존의 뉴런의 출력 f를 모델링 하는 방식은 tahn(x)나 sigmoid(x)였음. 그런데 이러한 saturating-linearity들은 non-saturating nonlinearity(ReLU...) 보다 훈련시간(gradient descent)이 훨씬 오래 걸린다. ReLU를 적용한 Deep convolutional nueral networks는 tanh를 적용한 것보다 훨씬 빨랐다. 위 그래프는 CIFAR-10데이터셋에 대한 훈련 에러를 25%까지 도달시키는데 6배 더 빨랐음을 보여준다.
 
 ##### 3.2 GPU
 GTX 580 GPU하나는 3GB의 메모리밖에 없음 이는 하나의 GPU 위에서 훈련될 수 있는 네트워크의 최대 사이즈를 제한한다는 의미임. 120만개의 training example들이 네트워크들을 훈련시키기에 충분하다고 함 근데 이는 하나의 GPU에 fit 하기에는 너무 큼. 따라서 논문에서는 두개의 GPU에 걸쳐 네트워크를 분산시켰다. 현재의 GPU들은 호스트 머신 메모리를 통하지 않고 서로 다른 메모리에 직접 접근하여 읽고 쓰는 것이 가능하기 때문에 cross-GPU parrelization하기에 좋다.여기서 사용한 병렬화 방식은 기본적으로 각 GPU에 커널(뉴런)의 절반을 배치 **GPU들은 오직 특정 레이어에서만 communicate함** ( 예를들어 layer 3의 커널은 layer 2에 있는 모든 커널 맵에서 인풋을 취한다. 하지만 layer 4에 있는 커널은 오직 동일한 GPU에 있는 layer 3의 커널 맵에서만 입력을 받는다. ) 연결 패턴을 선택하는 건 교차 검증의 문제지만 이를 통해 허용 가능한 계산량의 일부가 될 때까지 communication의 양을 정확하게 조정할 수 있다. 
