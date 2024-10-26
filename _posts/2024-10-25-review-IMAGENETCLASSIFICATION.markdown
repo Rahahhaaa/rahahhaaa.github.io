@@ -24,7 +24,7 @@ tags: [CV] # add tag
 ##### 3.1 ReLU Nonlinearity
 
 <p align = "center">
-    <img src="/assets/img/ICWDC/relu.png" style = "width:400px; heigth:auto; onclick="window.open(this.src)"">
+    <img src="/assets/img/ICWDC/relu.png" style = "width:400px; heigth:auto" onclick="window.open(this.src)">
 </p>
 
 기존의 뉴런의 출력을 모델링 하는 방식은 tahn(x)나 sigmoid(x)였다. 그런데 이러한 saturating-linearity들은 non-saturating nonlinearity(ReLU...) 보다 훈련시간(gradient descent)이 훨씬 오래 걸린다. ReLU를 적용한 Deep convolutional nueral networks는 tanh를 적용한 것보다 훨씬 빨랐다. 위 그래프는 CIFAR-10데이터셋에 대한 훈련 에러를 25%까지 도달시키는데 6배 더 빨랐음을 보여준다.
@@ -39,13 +39,13 @@ ReLU는 양수의 입력만을 그대로 사용한다. 그렇게 되면 매우 �
 
 ##### 3.4 Overlapping Pooling
 <p align = "center">
-    <img src="/assets/img/ICWDC/pooling.png" style = "width:400px; heigth:auto; onclick="window.open(this.src)"">
+    <img src="/assets/img/ICWDC/pooling.png" style = "width:400px; heigth:auto" onclick="window.open(this.src)">
 </p>
 CNN에서 pooling을 사용하는 이유는 특성맵의 크기를 줄이기 위해서이다. ImageNet에서는 stride의 크기를 커널의 크기보다 작게 설정해 overlapping pooling을 적용하였다. 이렇게 해서 top-1과 top-5 에러를 줄였다고 한다.
 
 ##### 3.5 Overall Architecture
 <p align = "center">
-    <img src="/assets/img/ICWDC/arch.png" style = "width:600px; heigth:auto; onclick="window.open(this.src)"">
+    <img src="/assets/img/ICWDC/arch.png" style = "width:800px; heigth:auto;" onclick="window.open(this.src)">
 </p>
 위에 나타나는 것처럼 네트워크는 가중치를 가지는 총 8개의 레이어로 구성되어있고 첫 5개는 conv layer 나머지 3개는 fc layer이다.마지막 fc layer의 출력은 1000-way softmax로 공급돼 1000개의 클래스 레이블에 대한 분포를 생성한다. 두번째 네번째 다섯번째 convolutional layer들은 동일한 GPU에 있는 이전 레이어의 커널 맵과만 연결되어있고 세번째 레이어만 두번째 레이어의 모든 커널맵과 연결되어있다. fc 레이어의 모든 뉴런들은 이전 레이어의 모든 뉴런과 연결되어있다. LRN은 첫번째 두번째 convolutional layer에만 따라온다. Max-pooling layer는 두 개의 response-normalization layer과 다섯번째 convolutional layer에 따라온다. ReLU non-linearity는 모든 convolutional layer와 fc layer에 적용된다.
 
