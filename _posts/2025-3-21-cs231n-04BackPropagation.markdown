@@ -5,6 +5,7 @@ date: 2025-03-21 00:00:00 +0800
 description: # Add post description (optional)
 img: # Add image post (optional)
 tags: [CV] # add tag
+categories: [DeepLearning] # add category (shows in top nav)
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>

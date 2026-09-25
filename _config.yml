@@ -22,6 +22,17 @@ discus-identifier: rahahhaaa # add your discus identifier
 # Tracker
 analytics: # Google Analytics
 
+# Top Nav Categories
+nav-categories:
+  - name: DeepLearning
+    slug: deeplearning
+  - name: CS
+    slug: cs
+  - name: Robotics
+    slug: robotics
+  - name: Etc
+    slug: etc
+
 # Build Settings
 markdown: kramdown
 plugins:

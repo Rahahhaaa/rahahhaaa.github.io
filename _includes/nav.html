@@ -1,0 +1,9 @@
+<nav class="top-nav">
+  <ul class="top-nav-links">
+    <li><a href="{{ site.baseurl }}/">Home</a></li>
+    {% for cat in site.nav-categories %}
+      <li><a href="{{ site.baseurl }}/{{ cat.slug }}/"{% if page.category == cat.name %} class="active"{% endif %}>{{ cat.name }}</a></li>
+    {% endfor %}
+    <li><a href="{{ site.baseurl }}/tags/">Tags</a></li>
+  </ul>
+</nav> <!-- End Top Nav -->

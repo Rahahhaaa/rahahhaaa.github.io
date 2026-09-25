@@ -5,6 +5,7 @@ date: 2024-10-25 00:00:00 +0800
 description: CV 논문 리뷰 ImageNet Classification with Deep  # Add post description (optional)
 img: ICWDC/architecture.jpg # Add image post (optional)
 tags: [CV] # add tag
+categories: [DeepLearning] # add category (shows in top nav)
 ---
 
 ### [1] Introduction
