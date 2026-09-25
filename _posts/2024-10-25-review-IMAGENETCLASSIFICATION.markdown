@@ -6,6 +6,7 @@ description: CV 논문 리뷰 ImageNet Classification with Deep  # Add post desc
 img: ICWDC/architecture.jpg # Add image post (optional)
 tags: [CV] # add tag
 categories: [DeepLearning] # add category (shows in top nav)
+published: false # hidden: remove this line to publish again
 ---
 
 ### [1] Introduction
