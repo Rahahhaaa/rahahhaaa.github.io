@@ -7,6 +7,6 @@
     {{ content }}
   </div>
   
-  {% include analytics.html %}
+  {% if site.analytics %}{% include analytics.html %}{% endif %}
 </body>
 </html>

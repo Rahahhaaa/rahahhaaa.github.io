@@ -1,4 +1,4 @@
-rno---
+---
 layout: post
 title: "[cs231n 정리노트] 4. Back-Propagation & Neural Networks"
 date: 2025-03-21 00:00:00 +0800
@@ -7,7 +7,7 @@ img: # Add image post (optional)
 tags: [CV] # add tag
 ---
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 오늘은 computational graphs라고 불리는 프레임워크를 사용해 무작위의 복잡한 함수에 대한 analytic gradient를 어떻게 계산하는지 얘기해봅시다.
 
